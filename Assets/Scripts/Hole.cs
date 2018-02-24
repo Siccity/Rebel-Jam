@@ -28,6 +28,7 @@ public class Hole : MonoBehaviour
 
             Invoke("ResetTrigger", 1f);
         }
+
     }
 
     private void ResetTrigger()
