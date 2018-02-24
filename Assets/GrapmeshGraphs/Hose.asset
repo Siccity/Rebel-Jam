@@ -1,0 +1,358 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fa84fc612ad1f94e8f79a8b7ff076b0, type: 3}
+  m_Name: Hose
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 114461159106567486}
+  - {fileID: 114262288320903860}
+  - {fileID: 114891584906560378}
+  - {fileID: 114572310884705968}
+  - {fileID: 114108577279852438}
+  - {fileID: 114678251096340052}
+  - {fileID: 114281030973634098}
+--- !u!114 &114108577279852438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 333f74f2de9dffe4ba0d766effec9995, type: 3}
+  m_Name: Exposed Input
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -152, y: -8}
+  ports:
+    keys:
+    - value
+    values:
+    - _fieldName: value
+      _node: {fileID: 114108577279852438}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: spline
+        node: {fileID: 114678251096340052}
+      - fieldName: spline
+        node: {fileID: 114281030973634098}
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  label: Unnamed
+  value: 0
+--- !u!114 &114262288320903860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd69c933e682d204c9c5e263e98474f1, type: 3}
+  m_Name: TRS
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 104, y: -328}
+  ports:
+    keys:
+    - input
+    - t
+    - r
+    - s
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114262288320903860}
+      _typeQualifiedName: Graphmesh.ModelGroup, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114461159106567486}
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+    - _fieldName: t
+      _node: {fileID: 114262288320903860}
+      _typeQualifiedName: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+    - _fieldName: r
+      _node: {fileID: 114262288320903860}
+      _typeQualifiedName: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+    - _fieldName: s
+      _node: {fileID: 114262288320903860}
+      _typeQualifiedName: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114262288320903860}
+      _typeQualifiedName: Graphmesh.ModelGroup, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114891584906560378}
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  t: {x: 0, y: 0, z: 0.05}
+  r: {x: 90, y: 0, z: 0}
+  s: {x: 0.05, y: 0.05, z: 0.05}
+--- !u!114 &114281030973634098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9370c3fd62106734d93933b376455370, type: 3}
+  m_Name: Follow Spline
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 632, y: -104}
+  ports:
+    keys:
+    - input
+    - spline
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 114281030973634098}
+      _typeQualifiedName: Graphmesh.ModelGroup, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114891584906560378}
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+    - _fieldName: spline
+      _node: {fileID: 114281030973634098}
+      _typeQualifiedName: Bezier3DSpline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: value
+        node: {fileID: 114108577279852438}
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114281030973634098}
+      _typeQualifiedName: Graphmesh.ModelGroup, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114572310884705968}
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  spline: {fileID: 0}
+  axis: 2
+--- !u!114 &114461159106567486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85e97a757e1c97146b918d00a32b43ed, type: 3}
+  m_Name: Make Model
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -184, y: -344}
+  ports:
+    keys:
+    - mesh
+    - material
+    - output
+    values:
+    - _fieldName: mesh
+      _node: {fileID: 114461159106567486}
+      _typeQualifiedName: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+    - _fieldName: material
+      _node: {fileID: 114461159106567486}
+      _typeQualifiedName: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114461159106567486}
+      _typeQualifiedName: Graphmesh.ModelGroup, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114262288320903860}
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  material: {fileID: 2100000, guid: 26e34756886f2904584b6e431cece4a2, type: 2}
+--- !u!114 &114572310884705968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8adb454b88a0dc542aa44472a5aa5804, type: 3}
+  m_Name: Output Model
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 888, y: -152}
+  ports:
+    keys:
+    - input
+    values:
+    - _fieldName: input
+      _node: {fileID: 114572310884705968}
+      _typeQualifiedName: Graphmesh.ModelGroup, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114281030973634098}
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+--- !u!114 &114678251096340052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c874d0d5be499284b84eabe1390ee2a1, type: 3}
+  m_Name: Spline Data
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 104, y: -104}
+  ports:
+    keys:
+    - spline
+    - length
+    - pointCount
+    values:
+    - _fieldName: spline
+      _node: {fileID: 114678251096340052}
+      _typeQualifiedName: Bezier3DSpline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: value
+        node: {fileID: 114108577279852438}
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+    - _fieldName: length
+      _node: {fileID: 114678251096340052}
+      _typeQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: length
+        node: {fileID: 114891584906560378}
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+    - _fieldName: pointCount
+      _node: {fileID: 114678251096340052}
+      _typeQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  spline: {fileID: 0}
+  length: 0
+  pointCount: 0
+--- !u!114 &114891584906560378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ffc9e756f3b674084489e3cebcd4cb, type: 3}
+  m_Name: Array
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 376, y: -232}
+  ports:
+    keys:
+    - input
+    - output
+    - length
+    - count
+    values:
+    - _fieldName: input
+      _node: {fileID: 114891584906560378}
+      _typeQualifiedName: Graphmesh.ModelGroup, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 114262288320903860}
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 114891584906560378}
+      _typeQualifiedName: Graphmesh.ModelGroup, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 114281030973634098}
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+    - _fieldName: length
+      _node: {fileID: 114891584906560378}
+      _typeQualifiedName: System.Single, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: length
+        node: {fileID: 114678251096340052}
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+    - _fieldName: count
+      _node: {fileID: 114891584906560378}
+      _typeQualifiedName: System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+  fitLength: 1
+  length: 0
+  count: 2
+  posOffset: {x: 0, y: 0, z: 0.1}
+  rotOffset: {x: 0, y: 0, z: 0}
