@@ -31,9 +31,8 @@ public class CharacterMovement : MonoBehaviour {
 
     void Awake()
     {
-        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
-        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
-
+        //scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        //levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
     }
 
     // Update is called once per frame
@@ -112,6 +111,7 @@ public class CharacterMovement : MonoBehaviour {
                 isUsingCrate = false;
         }
 
+
         if (isUsingCrate)
         {
             if (Mathf.Abs(direction.x) > Mathf.Abs(direction.z))
@@ -147,6 +147,11 @@ public class CharacterMovement : MonoBehaviour {
             Vector3 fall = new Vector3(0.0f, -0.1f, 0.0f);
             CharacterControlerVariable.Move(fall);
         }
+    }
+
+    private void ResetPosition()
+    {
+        
     }
 
     void OnDrawGizmos()
