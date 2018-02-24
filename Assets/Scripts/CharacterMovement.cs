@@ -148,7 +148,7 @@ public class CharacterMovement : MonoBehaviour{
         Vector3 transformDown = transform.TransformDirection(Vector3.down);
         if (!Physics.Raycast(transform.position, transformDown, 0.05f))
         {
-            print("We are falling");
+            //print("We are falling");
             Vector3 fall = new Vector3(0.0f, -0.1f, 0.0f);
             CharacterControlerVariable.Move(fall);
         }

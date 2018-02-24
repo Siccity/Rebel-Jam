@@ -73,7 +73,6 @@ GameObject:
   - component: {fileID: 33378387387204352}
   - component: {fileID: 23784294307282148}
   - component: {fileID: 65234036372318360}
-  - component: {fileID: 95666003804526996}
   m_Layer: 0
   m_Name: GateGate
   m_TagString: Untagged
@@ -88,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1600816501788864}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 1, y: 0, z: -4}
+  m_LocalPosition: {x: 3.5593467, y: -0.000000067263514, z: -0.5642473}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4306099095716642}
@@ -268,23 +267,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.6, z: 1}
   m_Center: {x: 0, y: 0.3, z: 0.5}
---- !u!95 &95666003804526996
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1622453563682636}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0281c60ef448dfd4282ae1ddb90fd9d5, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95891082094692774
 Animator:
   serializedVersion: 3
