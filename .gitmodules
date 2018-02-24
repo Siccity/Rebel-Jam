@@ -1,3 +1,4 @@
 [submodule "Assets/Submodules/Graphmesh"]
 	path = Assets/Submodules/Graphmesh
 	url = https://github.com/Siccity/Graphmesh.git
+   ignore = dirty
