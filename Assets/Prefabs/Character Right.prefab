@@ -1319,6 +1319,7 @@ MonoBehaviour:
   Mask:
     serializedVersion: 2
     m_Bits: 513
+  PlayerID: 2
 --- !u!136 &136626929689024008
 CapsuleCollider:
   m_ObjectHideFlags: 1
