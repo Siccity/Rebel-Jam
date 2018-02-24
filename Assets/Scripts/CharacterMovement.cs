@@ -139,6 +139,7 @@ public class CharacterMovement : MonoBehaviour{
 
             crate.Move(movement * (MovementSpeed/2));
             CharacterControlerVariable.Move(movement * Time.deltaTime * (MovementSpeed/2));
+            Animator.SetBool("Pushing", true);
         }
         else
         {
@@ -151,6 +152,7 @@ public class CharacterMovement : MonoBehaviour{
             }
 
             CharacterControlerVariable.Move(movement * Time.deltaTime * MovementSpeed);
+            Animator.SetBool("Pushing", false);
         }
 
         //Check if we touch the ground.
