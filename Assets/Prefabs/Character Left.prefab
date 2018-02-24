@@ -667,7 +667,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1201788828134086}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.239, y: 0, z: -3.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4976802268938200}
@@ -1211,9 +1211,10 @@ MonoBehaviour:
   CharacterControlerVariable: {fileID: 143595157000457366}
   HorizontalAxis: Horizontal
   VerticalAxis: Vertical
-  UseButton: 
-  ShirtMaterial: {fileID: 2100000, guid: a526ce6a1c7e2534fba60ceb372db3f1, type: 2}
-  playerRenderer: {fileID: 137368347856420770}
+  UseButton: Use1
+  Mask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!136 &136626929689024008
 CapsuleCollider:
   m_ObjectHideFlags: 1
