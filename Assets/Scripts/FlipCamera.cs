@@ -6,8 +6,8 @@ using UnityEngine;
 public class FlipCamera : MonoBehaviour
 {
     private Camera camera;
-    public bool flipHorizontal;
-    public bool flipVertical;
+    public bool FlipHorizontal;
+    public bool FlipVertical;
 
     void Awake()
     {
@@ -18,13 +18,13 @@ public class FlipCamera : MonoBehaviour
     {
         camera.ResetWorldToCameraMatrix();
         camera.ResetProjectionMatrix();
-        Vector3 scale = new Vector3(flipHorizontal ? -1 : 1, flipVertical ? -1 : 1, 1);
+        Vector3 scale = new Vector3(FlipHorizontal ? -1 : 1, FlipVertical ? -1 : 1, 1);
         camera.projectionMatrix = camera.projectionMatrix * Matrix4x4.Scale(scale);
     }
 
     void OnPreRender()
     {
-        GL.invertCulling = flipHorizontal || flipVertical;
+        GL.invertCulling = FlipHorizontal || FlipVertical;
     }
 
     void OnPostRender()

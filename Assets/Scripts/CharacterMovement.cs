@@ -10,15 +10,20 @@ public class CharacterMovement : MonoBehaviour {
     public float MovementSpeed;
     public CharacterController CharacterControlerVariable;
 
+    public string HorizontalAxis;
+    public string VerticalAxis;
+    public string UseButton;
+
     // Update is called once per frame
     void Update() {
         Animator.SetFloat("Speed", Speed);
 
     }
+
     void FixedUpdate(){
 
-        float moveHorizontal = - Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        float moveHorizontal = - Input.GetAxis(HorizontalAxis);
+        float moveVertical = Input.GetAxis(VerticalAxis);
 
         Vector3 movement = new Vector3(moveVertical, 0.0F, moveHorizontal);
         Speed = movement.magnitude;
