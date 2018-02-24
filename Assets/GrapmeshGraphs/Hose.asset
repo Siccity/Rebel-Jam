@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9370c3fd62106734d93933b376455370, type: 3}
-  m_Name: Follow Spline
+  m_Name: FollowSpline
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
   position: {x: 632, y: -104}
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c874d0d5be499284b84eabe1390ee2a1, type: 3}
-  m_Name: Spline Data
+  m_Name: SplineData
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
   position: {x: 104, y: -104}
