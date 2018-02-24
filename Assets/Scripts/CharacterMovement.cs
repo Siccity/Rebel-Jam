@@ -7,9 +7,8 @@ public class CharacterMovement : MonoBehaviour {
 	public Animator animator;
 	public float speed;
 
-    //public float tilt;
     public float movementSpeed;
-    public Rigidbody characterRigidbody;
+    public CharacterController characterControler;
 
     // Update is called once per frame
     void Update() {
@@ -18,17 +17,19 @@ public class CharacterMovement : MonoBehaviour {
     }
     void FixedUpdate(){
 
-        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveHorizontal = - Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        characterRigidbody.velocity = movement * movementSpeed;
-        speed = characterRigidbody.velocity.magnitude;
+        Vector3 movement = new Vector3(moveVertical, 0.0F, moveHorizontal);
+        characterControler.Move(movement * Time.deltaTime*movementSpeed);
 
-        characterRigidbody.position = new Vector3(transform.position.x, 0.0F, transform.position.z);
+        //characterControler.transform.r
 
-
-        //characterRigidbody.rotation = Quaternion.Euler(0.0f, 0.0f, characterRigidbody.velocity.x * -tilt);
-
+        //Check if we touch the ground.
+        Vector3 transformDown = transform.TransformDirection(Vector3.down);
+        if (Physics.Raycast(transform.position, transformDown, 1))
+            print("We are falling");
+            Vector3 fall = new Vector3(0.0f, -0.1f, 0.0f);
+            characterControler.Move(fall);
     }
 }
