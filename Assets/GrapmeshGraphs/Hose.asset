@@ -28,7 +28,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 333f74f2de9dffe4ba0d766effec9995, type: 3}
-  m_Name: Exposed Input
+  m_Name: ExposedInput
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
   position: {x: -152, y: -8}
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85e97a757e1c97146b918d00a32b43ed, type: 3}
-  m_Name: Make Model
+  m_Name: MakeModel
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
   position: {x: -184, y: -344}
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8adb454b88a0dc542aa44472a5aa5804, type: 3}
-  m_Name: Output Model
+  m_Name: OutputModel
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
   position: {x: 888, y: -152}
