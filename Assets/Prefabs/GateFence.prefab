@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 33378387387204352}
   - component: {fileID: 23784294307282148}
   - component: {fileID: 65234036372318360}
+  - component: {fileID: 114830394858796216}
   m_Layer: 0
   m_Name: GateGate
   m_TagString: Untagged
@@ -84,8 +85,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1600816501788864}
-  m_LocalRotation: {x: -0.70710576, y: -0, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: -6, y: 0, z: 2}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
+  m_LocalPosition: {x: -5, y: 0, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4306099095716642}
@@ -93,7 +94,7 @@ Transform:
   - {fileID: 4178701045479152}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 180, z: 0}
 --- !u!4 &4178701045479152
 Transform:
   m_ObjectHideFlags: 1
@@ -253,3 +254,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.6, z: 1}
   m_Center: {x: 0, y: 0.3, z: 0.5}
+--- !u!114 &114830394858796216
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1622453563682636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db7aad9e73ad5a94cb7f38ebdc92e425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -667,7 +667,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1201788828134086}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.13, y: 0, z: 1.74}
+  m_LocalPosition: {x: -2.9, y: 0.000000059254507, z: -4.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4976802268938200}
@@ -1207,6 +1207,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animator: {fileID: 95452670572145632}
   Speed: 0
+  HasKey: 0
+  KeyObject: {fileID: 0}
   MovementSpeed: 2
   CharacterControlerVariable: {fileID: 143595157000457366}
   HorizontalAxis: Horizontal2
@@ -1214,7 +1216,7 @@ MonoBehaviour:
   UseButton: Use2
   Mask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 513
 --- !u!136 &136626929689024008
 CapsuleCollider:
   m_ObjectHideFlags: 1
