@@ -329,10 +329,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36486a940781a8f4ea18918536155bc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 2043569469}
-  speed: 0
-  movementSpeed: 2
-  characterControler: {fileID: 2043569471}
+  Animator: {fileID: 2043569469}
+  Speed: 0
+  MovementSpeed: 2
+  CharacterControlerVariable: {fileID: 2043569471}
 --- !u!95 &2043569469 stripped
 Animator:
   m_PrefabParentObject: {fileID: 9500000, guid: 2c57b67a9d873f94a8a808a89fb6eaff,

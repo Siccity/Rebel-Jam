@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour {
 
-	public Animator animator;
-	public float speed;
+	public Animator Animator;
+	public float Speed;
 
-    public float movementSpeed;
-    public CharacterController characterControler;
+    public float MovementSpeed;
+    public CharacterController CharacterControlerVariable;
 
     // Update is called once per frame
     void Update() {
-        animator.SetFloat("Speed", speed);
+        Animator.SetFloat("Speed", Speed);
 
     }
     void FixedUpdate(){
@@ -21,15 +21,19 @@ public class CharacterMovement : MonoBehaviour {
         float moveVertical = Input.GetAxis("Vertical");
 
         Vector3 movement = new Vector3(moveVertical, 0.0F, moveHorizontal);
-        characterControler.Move(movement * Time.deltaTime*movementSpeed);
+        Speed = movement.magnitude;
+        //CharacterControlerVariable.Move(movement * Time.deltaTime*MovementSpeed);
+        if (movement != Vector3.zero){
+            transform.rotation = Quaternion.LookRotation(movement);
+        }
 
-        //characterControler.transform.r
+        CharacterControlerVariable.Move(movement / 20);
 
         //Check if we touch the ground.
         Vector3 transformDown = transform.TransformDirection(Vector3.down);
-        if (Physics.Raycast(transform.position, transformDown, 1))
+        if (Physics.Raycast(transform.position, transformDown, 0))
             print("We are falling");
             Vector3 fall = new Vector3(0.0f, -0.1f, 0.0f);
-            characterControler.Move(fall);
+            CharacterControlerVariable.Move(fall);
     }
 }
