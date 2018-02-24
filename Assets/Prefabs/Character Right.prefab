@@ -1306,7 +1306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36486a940781a8f4ea18918536155bc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HandHeldKey: {fileID: 0}
+  HandHeldKey: {fileID: 1108663600731708}
   Animator: {fileID: 95452670572145632}
   Speed: 0
   HasKey: 0
