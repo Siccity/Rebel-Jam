@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -92,6 +93,12 @@ public class CharacterMovement : MonoBehaviour {
                         
                         levelManager.NextLevel();
                     }
+                }
+                else if (hit.transform.gameObject.tag == "GateFence" && !HasKey){
+                    Debug.Log("Der er en låge");
+                    Animator.SetBool("OpenDoor",true);
+                    hit.transform.gameObject.GetComponent<Animator>().SetBool("Open", true);
+                    
                 }
             }
             else if (HasKey)

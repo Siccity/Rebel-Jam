@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Button : MonoBehaviour{
 
-    public Boolean ButtonDown = false;
+    public bool ButtonDown = false;
 
     void OnTriggerEnter(Collider col){
         ButtonDown = true;
