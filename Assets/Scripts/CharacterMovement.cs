@@ -36,8 +36,8 @@ public class CharacterMovement : MonoBehaviour{
 
     void Awake()
     {
-        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
-        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+        //scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        //levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
     }
 
     // Update is called once per frame
@@ -123,14 +123,19 @@ public class CharacterMovement : MonoBehaviour{
 
         if (isUsingCrate)
         {
+            var diff = 0f;
             if (Mathf.Abs(direction.x) > Mathf.Abs(direction.z))
             {
                 movement = new Vector3(movement.x, 0f, 0f);
+                diff = movement.x;
             }
             else
             {
                 movement = new Vector3(0f, 0f, movement.z);
+                diff = movement.z;
             }
+
+            Speed = diff/2;
 
             crate.Move(movement * (MovementSpeed/2));
             CharacterControlerVariable.Move(movement * Time.deltaTime * (MovementSpeed/2));
