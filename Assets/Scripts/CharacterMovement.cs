@@ -9,7 +9,7 @@ public class CharacterMovement : MonoBehaviour{
 
     public GameObject HandHeldKey;
 
-    public Vector3 StartPosition;
+    private Vector3 StartPosition = new Vector3(-4.2f,0,-2);
 
 	public Animator Animator;
 	public float Speed;
@@ -35,8 +35,8 @@ public class CharacterMovement : MonoBehaviour{
 
     void Awake()
     {
-        //scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
-        //levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
     }
 
     // Update is called once per frame
@@ -94,7 +94,10 @@ public class CharacterMovement : MonoBehaviour{
                             scoreManager.IncreasePlayer2Score();                            
                         }
                         
+                        ResetCharacter();
+
                         levelManager.NextLevel();
+                        
                     }
                 }
                 else if (hit.transform.gameObject.tag == "GateFence" && !HasKey){
@@ -157,6 +160,12 @@ public class CharacterMovement : MonoBehaviour{
         {
             ResetPosition();
         }
+    }
+
+    private void ResetCharacter(){
+        ResetPosition();
+        HandHeldKey.SetActive(false);
+        HasKey = false;
     }
 
     private void ResetPosition()
