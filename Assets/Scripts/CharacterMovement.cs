@@ -24,6 +24,7 @@ public class CharacterMovement : MonoBehaviour{
     public string VerticalAxis;
     public string UseButton;
     public LayerMask Mask;
+    public int PlayerID;
 
 
     private bool isUsingCrate = false;
@@ -85,11 +86,11 @@ public class CharacterMovement : MonoBehaviour{
                     if (HasKey)
                     {
                         Debug.Log("Du vandt, sejt!");
-                        if (gameObject.layer == 8)
+                        if (PlayerID == 1)
                         {
                             scoreManager.IncreasePlayer1Score();
                         }
-                        else if(gameObject.layer == 9)
+                        else if(PlayerID == 2)
                         {
                             scoreManager.IncreasePlayer2Score();                            
                         }
