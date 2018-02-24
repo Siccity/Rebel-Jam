@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Camera))]
+[ExecuteInEditMode]
 public class FlipCamera : MonoBehaviour
 {
     private Camera camera;

@@ -152,6 +152,11 @@ public class CharacterMovement : MonoBehaviour{
             Vector3 fall = new Vector3(0.0f, -0.1f, 0.0f);
             CharacterControlerVariable.Move(fall);
         }
+
+        if (transform.position.y < -4f)
+        {
+            ResetPosition();
+        }
     }
 
     private void ResetPosition()
