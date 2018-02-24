@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterMovement : MonoBehaviour {
 
@@ -23,6 +24,16 @@ public class CharacterMovement : MonoBehaviour {
     private bool isUsingCrate = false;
     private Crate crate;
     private Vector3 direction;
+
+    private LevelManager levelManager;
+    private ScoreManager scoreManager;
+
+    void Awake()
+    {
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+
+    }
 
     // Update is called once per frame
     void Update() {
@@ -70,6 +81,16 @@ public class CharacterMovement : MonoBehaviour {
                     if (HasKey)
                     {
                         Debug.Log("Du vandt, sejt!");
+                        if (gameObject.layer == 8)
+                        {
+                            scoreManager.IncreasePlayer1Score();
+                        }
+                        else if(gameObject.layer == 9)
+                        {
+                            scoreManager.IncreasePlayer2Score();                            
+                        }
+                        
+                        levelManager.NextLevel();
                     }
                 }
             }

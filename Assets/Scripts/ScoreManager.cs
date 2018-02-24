@@ -31,7 +31,7 @@ public class ScoreManager : MonoBehaviour {
     private int player2Score;
 
 
-    void Start ()
+    void Awake ()
 	{
 	    Player1Score = 0;
 	    Player1Score = 0;
