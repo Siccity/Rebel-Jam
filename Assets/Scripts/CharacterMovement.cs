@@ -9,7 +9,7 @@ public class CharacterMovement : MonoBehaviour{
 
     public GameObject HandHeldKey;
 
-    private Vector3 StartPosition = new Vector3(-4.2f,0,-2);
+    private Vector3 StartPosition = new Vector3(-4.2f, 0f, -2f);
 
 	public Animator Animator;
 	public float Speed;
@@ -73,12 +73,16 @@ public class CharacterMovement : MonoBehaviour{
                 }
                 else if (hit.transform.gameObject.tag == "Key" && !HasKey)
                 {
+                    Key key = hit.transform.gameObject.GetComponent<Key>();
 
-                    HasKey = true;
-                    KeyObject = hit.transform.gameObject;
-                    KeyObject.SetActive(false);
-                    HandHeldKey.SetActive(true);
-                    Debug.Log("found Key");
+                    if (key.HasAccess(PlayerID))
+                    {
+                        HasKey = true;
+                        KeyObject = hit.transform.gameObject;
+                        KeyObject.SetActive(false);
+                        HandHeldKey.SetActive(true);
+                        Debug.Log("found Key");
+                    }
                 }
                 else if (hit.transform.gameObject.tag == "Door")
                 {
