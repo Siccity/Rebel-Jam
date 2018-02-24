@@ -13,9 +13,9 @@ public class Crate : MonoBehaviour {
 	
 	void FixedUpdate () 
     {
-        var moveDirection = new Vector3(Input.GetAxis("Vertical"), 0, Input.GetAxis("Horizontal"));
-	    Controller.Move(moveDirection*Time.deltaTime);
-	    CloneController.Move(moveDirection*Time.deltaTime);
+        //var moveDirection = new Vector3(Input.GetAxis("Vertical"), 0, Input.GetAxis("Horizontal"));
+        //Controller.Move(moveDirection*Time.deltaTime);
+        //CloneController.Move(moveDirection*Time.deltaTime);
 	}
 
     public void Move(Vector3 movement)

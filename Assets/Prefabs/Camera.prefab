@@ -193,8 +193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f8b92c08ee69943ae7a037249142d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flipHorizontal: 1
-  flipVertical: 0
+  FlipHorizontal: 1
+  FlipVertical: 0
 --- !u!124 &124035186402674276
 Behaviour:
   m_ObjectHideFlags: 1
