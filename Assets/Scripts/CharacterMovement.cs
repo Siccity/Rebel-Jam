@@ -5,7 +5,9 @@ using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CharacterMovement : MonoBehaviour {
+public class CharacterMovement : MonoBehaviour{
+
+    public GameObject HandHeldKey;
 
 	public Animator Animator;
 	public float Speed;
@@ -73,7 +75,7 @@ public class CharacterMovement : MonoBehaviour {
                     HasKey = true;
                     KeyObject = hit.transform.gameObject;
                     KeyObject.SetActive(false);
-
+                    HandHeldKey.SetActive(true);
                     Debug.Log("found Key");
                 }
                 else if (hit.transform.gameObject.tag == "Door")
@@ -105,6 +107,7 @@ public class CharacterMovement : MonoBehaviour {
             {
                 HasKey = false;
                 KeyObject.SetActive(true);
+                HandHeldKey.SetActive(false);
                 KeyObject.transform.position = new Vector3(transform.position.x, 1, transform.position.z);
             }
         }
