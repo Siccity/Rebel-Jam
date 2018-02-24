@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 1f8d5b18505d88b4d88be9d4ad91b62b
-timeCreated: 1519473672
+guid: ac878e1a123fed64a8ce2e08c182245a
+timeCreated: 1519485029
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -8,43 +8,50 @@ ModelImporter:
     100000: Cube.001
     100002: Cube.002
     100004: //RootNode
-    100006: MediumFence
-    100008: SmallFence
-    100010: GateFence
-    100012: GateGate
+    100006: Door
+    100008: Window
+    100010: Plane
+    100012: Wall
     400000: Cube.001
     400002: Cube.002
     400004: //RootNode
-    400006: MediumFence
-    400008: SmallFence
-    400010: GateFence
-    400012: GateGate
+    400006: Door
+    400008: Window
+    400010: Plane
+    400012: Wall
     2300000: Cube.001
     2300002: Cube.002
-    2300004: MediumFence
-    2300006: SmallFence
-    2300008: GateFence
-    2300010: GateGate
+    2300004: Door
+    2300006: Window
+    2300008: Plane
+    2300010: //RootNode
+    2300012: Wall
     3300000: Cube.001
     3300002: Cube.002
-    3300004: MediumFence
-    3300006: SmallFence
-    3300008: GateFence
-    3300010: GateGate
+    3300004: Door
+    3300006: Window
+    3300008: Plane
+    3300010: //RootNode
+    3300012: Wall
     4300000: Cube.002
     4300002: Cube.001
-    4300004: MediumFence
-    4300006: SmallFence
-    4300008: GateFence
-    4300010: GateGate
+    4300004: Window
+    4300006: Door
+    4300008: Plane
+    4300010: Wall
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: 06b55547507acd84dafc766b489c116f, type: 2}
+      name: Brown
+    second: {fileID: 2100000, guid: b7f72e400bcb70649a90e0d540e6b373, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gray
+    second: {fileID: 2100000, guid: f15d53775023ffc4f93bbeeb747388ca, type: 2}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 0
