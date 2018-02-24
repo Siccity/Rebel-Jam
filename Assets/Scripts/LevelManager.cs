@@ -10,13 +10,13 @@ public class LevelManager : MonoBehaviour
 
     void Awake()
     {
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
     }
 
     public void NextLevel()
     {
         SceneManager.UnloadSceneAsync(currentScene);
         currentScene++;
-        SceneManager.LoadSceneAsync(currentScene);
+        SceneManager.LoadSceneAsync(currentScene, LoadSceneMode.Additive);
     }
 }
