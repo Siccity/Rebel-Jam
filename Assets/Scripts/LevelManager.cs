@@ -10,7 +10,10 @@ public class LevelManager : MonoBehaviour
 
     void Awake()
     {
-        SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+        if (SceneManager.sceneCount == 1) 
+        {
+            SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+        }
     }
 
     public void NextLevel()
