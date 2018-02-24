@@ -12,8 +12,7 @@ public class Button : MonoBehaviour{
         Debug.Log("Button is Down");
     }
 
-    private void OnTriggerExit(Collider col)
-    {
+    private void OnTriggerExit(Collider col){
         ButtonDown = false;
     }
 
