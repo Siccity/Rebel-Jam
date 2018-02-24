@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: 2c57b67a9d873f94a8a808a89fb6eaff
+timeCreated: 1519438855
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: arm_ik.l
+    100002: arm_ik.l_end
+    100004: arm_ik.r
+    100006: arm_ik.r_end
+    100008: Armature
+    100010: ass
+    100012: //RootNode
+    100014: Cube
+    100016: fingers.l
+    100018: fingers.l_end
+    100020: fingers.r
+    100022: fingers.r_end
+    100024: foot_ik.l
+    100026: foot_ik.l_end
+    100028: foot_ik.r
+    100030: foot_ik.r_end
+    100032: forearm.l
+    100034: forearm.r
+    100036: hand_ik.l
+    100038: hand_ik.l_end
+    100040: hand_ik.r
+    100042: hand_ik.r_end
+    100044: head
+    100046: head_end
+    100048: shin.l
+    100050: shin.l_end
+    100052: shin.r
+    100054: shin.r_end
+    100056: shoulder.l
+    100058: shoulder.r
+    100060: thigh.l
+    100062: thigh.r
+    100064: thumb.l
+    100066: thumb.l_end
+    100068: thumb.r
+    100070: thumb.r_end
+    100072: torso
+    100074: upperarm.l
+    100076: upperarm.r
+    400000: arm_ik.l
+    400002: arm_ik.l_end
+    400004: arm_ik.r
+    400006: arm_ik.r_end
+    400008: Armature
+    400010: ass
+    400012: //RootNode
+    400014: Cube
+    400016: fingers.l
+    400018: fingers.l_end
+    400020: fingers.r
+    400022: fingers.r_end
+    400024: foot_ik.l
+    400026: foot_ik.l_end
+    400028: foot_ik.r
+    400030: foot_ik.r_end
+    400032: forearm.l
+    400034: forearm.r
+    400036: hand_ik.l
+    400038: hand_ik.l_end
+    400040: hand_ik.r
+    400042: hand_ik.r_end
+    400044: head
+    400046: head_end
+    400048: shin.l
+    400050: shin.l_end
+    400052: shin.r
+    400054: shin.r_end
+    400056: shoulder.l
+    400058: shoulder.r
+    400060: thigh.l
+    400062: thigh.r
+    400064: thumb.l
+    400066: thumb.l_end
+    400068: thumb.r
+    400070: thumb.r_end
+    400072: torso
+    400074: upperarm.l
+    400076: upperarm.r
+    4300000: Cube
+    7400000: Armature|Idle
+    7400002: Armature|Run
+    9500000: //RootNode
+    13700000: Cube
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 31681bbe0862a0e48908df067e98c1cc, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
