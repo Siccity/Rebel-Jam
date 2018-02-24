@@ -6,7 +6,7 @@ public class Hole : MonoBehaviour
 {
 
     public Animator Animator;
-
+    
     private bool animationPlaying;
 
     void OnTriggerEnter(Collider col)

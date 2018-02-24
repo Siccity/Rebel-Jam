@@ -9,6 +9,8 @@ public class CharacterMovement : MonoBehaviour{
 
     public GameObject HandHeldKey;
 
+    public Vector3 StartPosition;
+
 	public Animator Animator;
 	public float Speed;
 
@@ -154,7 +156,7 @@ public class CharacterMovement : MonoBehaviour{
 
     private void ResetPosition()
     {
-        
+        transform.position = StartPosition;
     }
 
     void OnDrawGizmos()
