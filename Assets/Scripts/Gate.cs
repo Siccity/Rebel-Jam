@@ -2,14 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gate : MonoBehaviour {
-
-    public Animator Animator;
-    // Use this for initialization
-    void Start () {
-	}
-
-    
+public class Gate : MonoBehaviour{
 	
 	// Update is called once per frame
 	void Update () {
@@ -17,6 +10,6 @@ public class Gate : MonoBehaviour {
     }
 
     public void OpenGate(){
-        transform.Rotate(Vector3.forward * Time.deltaTime*10);
+            transform.Rotate(Vector3.forward * Time.deltaTime * 10);
     }
 }
