@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,9 @@ public class CharacterMovement : MonoBehaviour {
 
 	public Animator Animator;
 	public float Speed;
+
+    public bool HasKey = false;
+    public GameObject KeyObject;
 
     public float MovementSpeed;
     public CharacterController CharacterControlerVariable;
@@ -36,30 +40,49 @@ public class CharacterMovement : MonoBehaviour {
 
         if (Input.GetButtonDown(UseButton))
         {
-            if (isUsingCrate)
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position + (Vector3.up * 0.5f), transform.forward, out hit, 0.7f, Mask))
             {
-                isUsingCrate = false;
-            }
-            else
-            {
-                RaycastHit hit;
-                if (Physics.Raycast(transform.position + (Vector3.up * 0.5f), transform.forward, out hit, 0.5f, Mask))
+                Debug.Log(hit.transform.gameObject.name);
+
+                if (hit.transform.gameObject.tag == "Crate" && !HasKey)
                 {
-                    Debug.Log(hit.transform.gameObject.name);
-
-                    if (hit.transform.gameObject.tag == "Crate")
-                    {
-                        isUsingCrate = true;
-                        Debug.Log("Crate used");
-
-                        direction = transform.forward;
-                        crate = hit.transform.gameObject.GetComponent<Crate>();
-                    }
                     
+                    isUsingCrate = true;
+                    Debug.Log("Crate used");
+
+                    direction = transform.forward;
+                    crate = hit.transform.gameObject.GetComponent<Crate>();
+                   
+                }
+                else if (hit.transform.gameObject.tag == "Key" && !HasKey)
+                {
+
+                    HasKey = true;
+                    KeyObject = hit.transform.gameObject;
+                    KeyObject.SetActive(false);
+
+                    Debug.Log("found Key");
+                }
+                else if (hit.transform.gameObject.tag == "Door")
+                {
+                    Debug.Log("Det er en dør");
+                    if (HasKey)
+                    {
+                        Debug.Log("Du vandt, sejt!");
+                    }
                 }
             }
+            else if (HasKey)
+            {
+                HasKey = false;
+                KeyObject.SetActive(true);
+                KeyObject.transform.position = new Vector3(transform.position.x, 1, transform.position.z);
+            }
         }
-
+        else if(Input.GetButtonUp(UseButton)){
+                isUsingCrate = false;
+        }
 
         if (isUsingCrate)
         {
@@ -90,7 +113,7 @@ public class CharacterMovement : MonoBehaviour {
 
         //Check if we touch the ground.
         Vector3 transformDown = transform.TransformDirection(Vector3.down);
-        if (!Physics.Raycast(transform.position, transformDown, 0.5f))
+        if (!Physics.Raycast(transform.position, transformDown, 0.05f))
         {
             print("We are falling");
             Vector3 fall = new Vector3(0.0f, -0.1f, 0.0f);
@@ -100,6 +123,6 @@ public class CharacterMovement : MonoBehaviour {
 
     void OnDrawGizmos()
     {
-        Debug.DrawLine(transform.position, transform.position + (transform.forward * 0.5f), Color.cyan);
+        Debug.DrawLine(transform.position, transform.position + (transform.forward * 0.7f), Color.cyan);
     }
 }
