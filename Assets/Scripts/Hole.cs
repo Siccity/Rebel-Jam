@@ -33,6 +33,13 @@ public class Hole : MonoBehaviour
                 AnimatorR.SetTrigger("Crate");
                 rightIn = true;
             }
+            else if (col.gameObject.layer == 0 && !rightIn && !leftIn)
+            {
+                AnimatorL.SetTrigger("Crate");
+                leftIn = true;
+                AnimatorR.SetTrigger("Crate");
+                rightIn = true;
+            }
             
             
             col.gameObject.SetActive(false);
