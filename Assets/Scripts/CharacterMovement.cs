@@ -60,8 +60,19 @@ public class CharacterMovement : MonoBehaviour{
             if (Physics.Raycast(transform.position + (Vector3.up * 0.5f), transform.forward, out hit, 0.7f, Mask))
             {
                 Debug.Log(hit.transform.gameObject.name);
+                if (hit.transform.gameObject.tag == "Player" && !HasKey)
+                {
+                    Debug.Log("Player Hit");
+                    if (HasKey)
+                    {
+                        ThrowKey();
+                    }
 
-                if (hit.transform.gameObject.tag == "Crate" && !HasKey)
+                    Animator.SetTrigger("Hit");
+                    hit.transform.gameObject.GetComponent<CharacterMovement>().Hit(transform.forward);
+
+                }
+                else if (hit.transform.gameObject.tag == "Crate" && !HasKey)
                 {
                     
                     isUsingCrate = true;
@@ -114,10 +125,7 @@ public class CharacterMovement : MonoBehaviour{
             }
             else if (HasKey)
             {
-                HasKey = false;
-                KeyObject.SetActive(true);
-                HandHeldKey.SetActive(false);
-                KeyObject.transform.position = new Vector3(transform.position.x, 1, transform.position.z);
+                ThrowKey();
             }
         }
         else if(Input.GetButtonUp(UseButton)){
@@ -173,6 +181,36 @@ public class CharacterMovement : MonoBehaviour{
             ResetPosition();
         }
     }
+
+    private void ThrowKey()
+    {
+        HasKey = false;
+        KeyObject.SetActive(true);
+        HandHeldKey.SetActive(false);
+        KeyObject.transform.position = new Vector3(transform.position.x, 1, transform.position.z);
+    }
+
+    public void Hit(Vector3 hitDirection)
+    {
+        if (HasKey)
+        {
+            ThrowKey();
+        }
+
+        StartCoroutine(Knockback(hitDirection));
+    }
+
+    IEnumerator Knockback(Vector3 hitDirection)
+    {
+        for (float i = 0.2f; i > 0; i -= Time.deltaTime)
+        {
+            CharacterControlerVariable.Move(hitDirection*Time.deltaTime * 4);
+            yield return null;
+        }
+
+        
+    }
+
 
     private void ResetCharacter(){
         ResetPosition();
