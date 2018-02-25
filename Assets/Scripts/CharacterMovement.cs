@@ -179,6 +179,14 @@ public class CharacterMovement : MonoBehaviour{
         }
     }
 
+    void OnTriggerEnter(Collider col)
+    {
+        Debug.Log("Instakill");
+        if (col.CompareTag("Instakill")) {
+            ResetPosition();
+        }
+    }
+
     private void ResetCharacter(){
         ResetPosition();
         HandHeldKey.SetActive(false);
