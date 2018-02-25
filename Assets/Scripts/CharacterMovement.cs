@@ -111,6 +111,11 @@ public class CharacterMovement : MonoBehaviour{
                     hit.transform.gameObject.GetComponent<Animator>().SetBool("Open", true);
                     
                 }
+                else if (hit.transform.gameObject.CompareTag("WaterPump")) {
+                    WaterPump wp = hit.transform.gameObject.GetComponent<WaterPump>();
+                    if (wp != null) wp.Interact();
+                    else Debug.LogWarning("mangler WaterPump component!");
+                }
             }
             else if (HasKey)
             {
