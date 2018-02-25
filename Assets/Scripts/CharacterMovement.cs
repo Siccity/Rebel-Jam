@@ -11,6 +11,8 @@ public class CharacterMovement : MonoBehaviour{
 
     private Vector3 StartPosition = new Vector3(-4.2f, 0f, -2f);
 
+    public AudioClip Punch;
+    private AudioSource SourceOfAudio;
 
     public Animator Animator;
 	public float Speed;
@@ -46,6 +48,8 @@ public class CharacterMovement : MonoBehaviour{
     {
         scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+
+        SourceOfAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -67,7 +71,7 @@ public class CharacterMovement : MonoBehaviour{
             var playerHit = false;
 
             RaycastHit hit;
-            if (Physics.Raycast(transform.position + (Vector3.up * 0.5f), transform.forward, out hit, 0.7f))
+            if (Physics.Raycast(transform.position + (Vector3.up * 0.5f), transform.forward, out hit, 0.9f))
             {
                 if (hit.transform.gameObject.tag == "Player" && !HasKey)
                 {
@@ -81,6 +85,8 @@ public class CharacterMovement : MonoBehaviour{
 
                     Animator.SetTrigger("Hit");
                     hit.transform.gameObject.GetComponent<CharacterMovement>().Hit(transform.forward);
+                   
+                    Invoke("playPunchSound", 0.26f);
 
                 }
             }
@@ -171,7 +177,7 @@ public class CharacterMovement : MonoBehaviour{
             {
                 ThrowKey();
             }
-            else
+            else if (!playerHit)
             {
                 Taunt();
             }
@@ -230,6 +236,10 @@ public class CharacterMovement : MonoBehaviour{
         }
     }
 
+    private void playPunchSound(){
+        SourceOfAudio.PlayOneShot(Punch, 1);
+    }
+
     private void Taunt()
     {
         Animator.SetTrigger("Taunt");
@@ -261,8 +271,8 @@ public class CharacterMovement : MonoBehaviour{
         StartCoroutine(Knockback(hitDirection));
     }
 
-    IEnumerator Knockback(Vector3 hitDirection)
-    {
+    IEnumerator Knockback(Vector3 hitDirection){
+        yield return new WaitForSeconds(0.5f);
         for (float i = 0.2f; i > 0; i -= Time.deltaTime)
         {
             CharacterControlerVariable.Move(hitDirection*Time.deltaTime * 4);
