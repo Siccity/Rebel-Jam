@@ -142,7 +142,6 @@ public class CharacterMovement : MonoBehaviour{
                         SourceOfAudio.PlayOneShot(DoorSound, 1);
                         
                         levelManager.NextLevel();
-                        ResetCharacterOnLevelLoad();
 
                     }
                 }
@@ -294,13 +293,14 @@ public class CharacterMovement : MonoBehaviour{
         
     }
 
-    private void ResetCharacterOnLevelLoad(){
+    public void ResetCharacterOnLevelLoad(){
         ResetPosition();
         if (KeyObject != null && HasKey){
             HandHeldKey.SetActive(false);
             HasKey = false;
             KeyObject.GetComponent<Key>().ResetKeyPosition();
             KeyObject.SetActive(true);
+            KeyObject = null;
         }
     }
 
