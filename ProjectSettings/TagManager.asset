@@ -8,6 +8,8 @@ TagManager:
   - Key
   - Door
   - GateFence
+  - WaterPump
+  - GateFenceMirror
   layers:
   - Default
   - TransparentFX

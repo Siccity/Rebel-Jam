@@ -216,7 +216,7 @@ AnimationClip:
   m_GenerateMotionCurves: 1
   m_Events:
   - time: 0.98333335
-    functionName: ResetPosition
+    functionName: ResetCharacterOnLevelLoad
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

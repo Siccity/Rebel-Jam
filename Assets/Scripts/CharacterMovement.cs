@@ -11,20 +11,28 @@ public class CharacterMovement : MonoBehaviour{
 
     private Vector3 StartPosition = new Vector3(-4.2f, 0f, -2f);
 
-	public Animator Animator;
+
+    public Animator Animator;
 	public float Speed;
 
     public bool HasKey = false;
     public GameObject KeyObject;
 
-    public float MovementSpeed;
+    private float MovementSpeed = 3;
     public CharacterController CharacterControlerVariable;
 
     public string HorizontalAxis;
     public string VerticalAxis;
     public string UseButton;
     public LayerMask Mask;
+    public LayerMask MirrorMask;
+    private bool normalMask = true;
+    public int NormalLayer;
+    public int MirrorLayer;
     public int PlayerID;
+
+    public GameObject Body;
+    public GameObject MirrorBody;
 
 
     private bool isUsingCrate = false;
@@ -36,8 +44,8 @@ public class CharacterMovement : MonoBehaviour{
 
     void Awake()
     {
-        //scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
-        //levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
     }
 
     // Update is called once per frame
@@ -51,14 +59,13 @@ public class CharacterMovement : MonoBehaviour{
         float moveHorizontal = - Input.GetAxis(HorizontalAxis);
         float moveVertical = Input.GetAxis(VerticalAxis);
 
-        Vector3 movement = new Vector3(moveVertical, 0.0F, moveHorizontal);
+        Vector3 movement = new Vector3(moveVertical, 0.0F, normalMask?moveHorizontal:-moveHorizontal);
 
 
         if (Input.GetButtonDown(UseButton))
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position + (Vector3.up * 0.5f), transform.forward, out hit, 0.7f, Mask))
-            {
+            if (Physics.Raycast(transform.position + (Vector3.up * 0.5f), transform.forward, out hit, 0.7f, normalMask?Mask:MirrorMask)){
                 Debug.Log(hit.transform.gameObject.name);
                 if (hit.transform.gameObject.tag == "Player" && !HasKey)
                 {
@@ -110,7 +117,7 @@ public class CharacterMovement : MonoBehaviour{
                             scoreManager.IncreasePlayer2Score();                            
                         }
                         
-                        ResetCharacter();
+                        ResetCharacterOnLevelLoad();
 
                         levelManager.NextLevel();
                         
@@ -121,6 +128,28 @@ public class CharacterMovement : MonoBehaviour{
                     Animator.SetBool("OpenDoor",true);
                     hit.transform.gameObject.GetComponent<Animator>().SetBool("Open", true);
                     
+                }
+                else if (hit.transform.gameObject.CompareTag("WaterPump")) {
+                    WaterPump wp = hit.transform.gameObject.GetComponent<WaterPump>();
+                    if (wp != null) wp.Interact();
+                    else Debug.LogWarning("mangler WaterPump component!");
+                }
+                else if (hit.transform.gameObject.tag == "GateFenceMirror" && !HasKey)
+                {
+                    Debug.Log("Der er en mirror portal");
+                    Animator.SetBool("OpenDoor", true);
+                    //mirror player with shadow
+                    if (normalMask){
+                        gameObject.layer = MirrorLayer;
+                        Body.layer = MirrorLayer;
+                        MirrorBody.layer = NormalLayer;
+                    }
+                    else{
+                        gameObject.layer = NormalLayer;
+                        Body.layer = NormalLayer;
+                        MirrorBody.layer = MirrorLayer;
+                    }
+                    normalMask = !normalMask;
                 }
             }
             else if (HasKey)
@@ -178,6 +207,14 @@ public class CharacterMovement : MonoBehaviour{
 
         if (transform.position.y < -4f)
         {
+            ResetCharacterOnLevelLoad();
+        }
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        Debug.Log("Instakill");
+        if (col.CompareTag("Instakill")) {
             ResetPosition();
         }
     }
@@ -211,16 +248,25 @@ public class CharacterMovement : MonoBehaviour{
         
     }
 
-
-    private void ResetCharacter(){
+    private void ResetCharacterOnLevelLoad(){
         ResetPosition();
-        HandHeldKey.SetActive(false);
-        HasKey = false;
+        if (KeyObject != null && HasKey){
+            HandHeldKey.SetActive(false);
+            HasKey = false;
+            KeyObject.GetComponent<Key>().ResetKeyPosition();
+            KeyObject.SetActive(true);
+        }
     }
 
-    private void ResetPosition()
-    {
+    private void ResetPosition(){
         transform.position = StartPosition;
+
+        //trying to reset rotation
+
+        //CharacterControlerVariable.enabled = true;
+        //Vector3 resetRotation = new Vector3(1, 0.0F, 0);
+        //CharacterControlerVariable.Move(resetRotation* Time.deltaTime * MovementSpeed);
+        //CharacterControlerVariable.enabled = false;
     }
 
     void OnDrawGizmos()

@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 143595157000457366}
   - component: {fileID: 136626929689024008}
   - component: {fileID: 114260135657366034}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Character Left
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1311,7 +1311,6 @@ MonoBehaviour:
   Speed: 0
   HasKey: 0
   KeyObject: {fileID: 0}
-  MovementSpeed: 2
   CharacterControlerVariable: {fileID: 143595157000457366}
   HorizontalAxis: Horizontal
   VerticalAxis: Vertical
@@ -1319,7 +1318,14 @@ MonoBehaviour:
   Mask:
     serializedVersion: 2
     m_Bits: 257
+  MirrorMask:
+    serializedVersion: 2
+    m_Bits: 513
+  NormalLayer: 8
+  MirrorLayer: 9
   PlayerID: 1
+  Body: {fileID: 1881943735792570}
+  MirrorBody: {fileID: 1940339114516646}
 --- !u!136 &136626929689024008
 CapsuleCollider:
   m_ObjectHideFlags: 1
