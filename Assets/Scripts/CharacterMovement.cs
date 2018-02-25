@@ -139,22 +139,32 @@ public class CharacterMovement : MonoBehaviour{
                     Debug.Log("Der er en mirror portal");
                     Animator.SetBool("OpenDoor", true);
                     //mirror player with shadow
-                    if (normalMask){
+                    if (normalMask)
+                    {
                         gameObject.layer = MirrorLayer;
                         Body.layer = MirrorLayer;
                         MirrorBody.layer = NormalLayer;
                     }
-                    else{
+                    else
+                    {
                         gameObject.layer = NormalLayer;
                         Body.layer = NormalLayer;
                         MirrorBody.layer = MirrorLayer;
                     }
                     normalMask = !normalMask;
                 }
+                else
+                {
+                    Taunt();
+                }
             }
             else if (HasKey)
             {
                 ThrowKey();
+            }
+            else
+            {
+                Taunt();
             }
         }
         else if(Input.GetButtonUp(UseButton)){
@@ -209,6 +219,11 @@ public class CharacterMovement : MonoBehaviour{
         {
             ResetCharacterOnLevelLoad();
         }
+    }
+
+    private void Taunt()
+    {
+        Animator.SetTrigger("Taunt");
     }
 
     void OnTriggerEnter(Collider col)
