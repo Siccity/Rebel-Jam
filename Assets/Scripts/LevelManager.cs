@@ -18,8 +18,10 @@ public class LevelManager : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.UnloadSceneAsync(currentScene);
         currentScene++;
         SceneManager.LoadSceneAsync(currentScene, LoadSceneMode.Additive);
+
+        SceneManager.UnloadSceneAsync(currentScene-1);
+       
     }
 }

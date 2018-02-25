@@ -11,6 +11,8 @@ public class CharacterMovement : MonoBehaviour{
 
     private Vector3 StartPosition = new Vector3(-4.2f, 0f, -2f);
 
+    public AudioClip DoorSound;
+    public AudioClip KeySound;
     public AudioClip Punch;
     private AudioSource SourceOfAudio;
 
@@ -115,6 +117,7 @@ public class CharacterMovement : MonoBehaviour{
                         KeyObject.SetActive(false);
                         HandHeldKey.SetActive(true);
                         Debug.Log("found Key");
+                        SourceOfAudio.PlayOneShot(KeySound, 1);
                     }
                 }
                 else if (hit.transform.gameObject.tag == "Door")
@@ -131,11 +134,11 @@ public class CharacterMovement : MonoBehaviour{
                         {
                             scoreManager.IncreasePlayer2Score();                            
                         }
+                        SourceOfAudio.PlayOneShot(DoorSound, 1);
                         
+                        levelManager.NextLevel();
                         ResetCharacterOnLevelLoad();
 
-                        levelManager.NextLevel();
-                        
                     }
                 }
                 else if (hit.transform.gameObject.tag == "GateFence" && !HasKey){
