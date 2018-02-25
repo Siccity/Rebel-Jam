@@ -44,8 +44,8 @@ public class CharacterMovement : MonoBehaviour{
 
     void Awake()
     {
-        //scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
-        //levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
     }
 
     // Update is called once per frame
