@@ -44,8 +44,8 @@ public class CharacterMovement : MonoBehaviour{
 
     void Awake()
     {
-        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
-        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+        //scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        //levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
     }
 
     // Update is called once per frame
@@ -65,8 +65,8 @@ public class CharacterMovement : MonoBehaviour{
         if (Input.GetButtonDown(UseButton))
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position + (Vector3.up * 0.5f), transform.forward, out hit, 0.7f, normalMask?Mask:MirrorMask)){
-                Debug.Log(hit.transform.gameObject.name);
+            if (Physics.Raycast(transform.position + (Vector3.up * 0.5f), transform.forward, out hit, 0.7f))
+            {
                 if (hit.transform.gameObject.tag == "Player" && !HasKey)
                 {
                     Debug.Log("Player Hit");
@@ -79,7 +79,11 @@ public class CharacterMovement : MonoBehaviour{
                     hit.transform.gameObject.GetComponent<CharacterMovement>().Hit(transform.forward);
 
                 }
-                else if (hit.transform.gameObject.tag == "Crate" && !HasKey)
+            }
+            else if (Physics.Raycast(transform.position + (Vector3.up * 0.5f), transform.forward, out hit, 0.7f, normalMask?Mask:MirrorMask)){
+                Debug.Log(hit.transform.gameObject.name);
+                
+                if (hit.transform.gameObject.tag == "Crate" && !HasKey)
                 {
                     
                     isUsingCrate = true;
