@@ -6,7 +6,8 @@ public class Hole : MonoBehaviour
 {
 
     public Animator Animator;
-    
+    public GameObject Plant;
+
     private bool animationPlaying;
 
     void OnTriggerEnter(Collider col)
@@ -16,8 +17,12 @@ public class Hole : MonoBehaviour
         {
             Debug.Log("Crate fell in hole");
             animationPlaying = true;
+            Plant.layer = col.gameObject.layer;
+            
             Animator.SetBool("Crate", true);
             col.gameObject.SetActive(false);
+
+
         }
         else if (col.gameObject.tag == "Player" && !animationPlaying)
         {

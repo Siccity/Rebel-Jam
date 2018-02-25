@@ -64,12 +64,16 @@ public class CharacterMovement : MonoBehaviour{
 
         if (Input.GetButtonDown(UseButton))
         {
+            var playerHit = false;
+
             RaycastHit hit;
             if (Physics.Raycast(transform.position + (Vector3.up * 0.5f), transform.forward, out hit, 0.7f))
             {
                 if (hit.transform.gameObject.tag == "Player" && !HasKey)
                 {
                     Debug.Log("Player Hit");
+
+                    playerHit = true;
                     if (HasKey)
                     {
                         ThrowKey();
@@ -80,7 +84,8 @@ public class CharacterMovement : MonoBehaviour{
 
                 }
             }
-            else if (Physics.Raycast(transform.position + (Vector3.up * 0.5f), transform.forward, out hit, 0.7f, normalMask?Mask:MirrorMask)){
+
+            if (!playerHit && Physics.Raycast(transform.position + (Vector3.up * 0.5f), transform.forward, out hit, 0.7f, normalMask?Mask:MirrorMask)){
                 Debug.Log(hit.transform.gameObject.name);
                 
                 if (hit.transform.gameObject.tag == "Crate" && !HasKey)
