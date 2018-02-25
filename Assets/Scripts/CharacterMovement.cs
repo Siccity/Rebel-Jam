@@ -4,8 +4,11 @@ using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = System.Random;
 
 public class CharacterMovement : MonoBehaviour{
+
+    private static Random rand = new Random();
 
     public GameObject HandHeldKey;
 
@@ -42,6 +45,8 @@ public class CharacterMovement : MonoBehaviour{
     private bool isUsingCrate = false;
     private Crate crate;
     private Vector3 direction;
+
+    private string[] flinchStrings = { "Flinch1", "Flinch2", "Flinch3" };
 
     private LevelManager levelManager;
     private ScoreManager scoreManager;
@@ -276,6 +281,10 @@ public class CharacterMovement : MonoBehaviour{
 
     IEnumerator Knockback(Vector3 hitDirection){
         yield return new WaitForSeconds(0.5f);
+
+        var n = rand.Next(flinchStrings.Length);
+        Animator.SetTrigger(flinchStrings[n]);
+
         for (float i = 0.2f; i > 0; i -= Time.deltaTime)
         {
             CharacterControlerVariable.Move(hitDirection*Time.deltaTime * 4);
