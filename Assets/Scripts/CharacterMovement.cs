@@ -211,7 +211,7 @@ public class CharacterMovement : MonoBehaviour{
         }
     }
 
-    private void ResetCharacter(){
+
     private void ResetCharacterOnLevelLoad(){
         ResetPosition();
         if (KeyObject != null && HasKey){
