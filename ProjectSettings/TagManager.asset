@@ -9,7 +9,7 @@ TagManager:
   - Door
   - GateFence
   - WaterPump
-  - Instakill
+  - GateFenceMirror
   layers:
   - Default
   - TransparentFX
