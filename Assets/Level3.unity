@@ -1202,7 +1202,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 64326338289329236, guid: 069ce86ef854e8f4c9cf0cc3426098ab, type: 2}
+    - {fileID: 64567502887299066, guid: 069ce86ef854e8f4c9cf0cc3426098ab, type: 2}
+    - {fileID: 64855926665079176, guid: 069ce86ef854e8f4c9cf0cc3426098ab, type: 2}
+    - {fileID: 64096717014308214, guid: 069ce86ef854e8f4c9cf0cc3426098ab, type: 2}
+    - {fileID: 64944506664603648, guid: 069ce86ef854e8f4c9cf0cc3426098ab, type: 2}
+    - {fileID: 64653371985640976, guid: 069ce86ef854e8f4c9cf0cc3426098ab, type: 2}
+    - {fileID: 64021202210528006, guid: 069ce86ef854e8f4c9cf0cc3426098ab, type: 2}
+    - {fileID: 64648058060710330, guid: 069ce86ef854e8f4c9cf0cc3426098ab, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 069ce86ef854e8f4c9cf0cc3426098ab, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &250474492 stripped
@@ -25765,6 +25773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 1989444547}
+  Plant: {fileID: 0}
 --- !u!65 &1110090822
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30029,7 +30038,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4542948223771928, guid: 069ce86ef854e8f4c9cf0cc3426098ab, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4337116261286910, guid: 069ce86ef854e8f4c9cf0cc3426098ab, type: 2}
       propertyPath: m_RootOrder
@@ -30037,7 +30046,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4203067418082536, guid: 069ce86ef854e8f4c9cf0cc3426098ab, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4785116744448420, guid: 069ce86ef854e8f4c9cf0cc3426098ab, type: 2}
       propertyPath: m_RootOrder
@@ -30047,7 +30056,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 64944506664603648, guid: 069ce86ef854e8f4c9cf0cc3426098ab, type: 2}
+    - {fileID: 64653371985640976, guid: 069ce86ef854e8f4c9cf0cc3426098ab, type: 2}
+    - {fileID: 64021202210528006, guid: 069ce86ef854e8f4c9cf0cc3426098ab, type: 2}
+    - {fileID: 64648058060710330, guid: 069ce86ef854e8f4c9cf0cc3426098ab, type: 2}
+    - {fileID: 64326338289329236, guid: 069ce86ef854e8f4c9cf0cc3426098ab, type: 2}
+    - {fileID: 64567502887299066, guid: 069ce86ef854e8f4c9cf0cc3426098ab, type: 2}
+    - {fileID: 64855926665079176, guid: 069ce86ef854e8f4c9cf0cc3426098ab, type: 2}
+    - {fileID: 64096717014308214, guid: 069ce86ef854e8f4c9cf0cc3426098ab, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 069ce86ef854e8f4c9cf0cc3426098ab, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2079895267
@@ -30098,6 +30115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 1606296545}
+  Plant: {fileID: 0}
 --- !u!65 &2079895270
 BoxCollider:
   m_ObjectHideFlags: 0
