@@ -1324,8 +1324,8 @@ MonoBehaviour:
   NormalLayer: 9
   MirrorLayer: 8
   PlayerID: 2
-  Body: {fileID: 1940339114516646}
-  MirrorBody: {fileID: 1881943735792570}
+  Body: {fileID: 1881943735792570}
+  MirrorBody: {fileID: 1940339114516646}
 --- !u!136 &136626929689024008
 CapsuleCollider:
   m_ObjectHideFlags: 1
