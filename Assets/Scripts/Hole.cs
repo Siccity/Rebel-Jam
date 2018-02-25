@@ -5,40 +5,64 @@ using UnityEngine;
 public class Hole : MonoBehaviour
 {
 
-    public Animator Animator;
-    public GameObject Plant;
+    public Animator AnimatorL;
+    public Animator AnimatorR;
+    public GameObject PlantL;
+    public GameObject PlantR;
 
-    private bool animationPlaying;
+    private bool animationLeftPlaying;
+    private bool animationRightPlaying;
+
+    private bool leftIn;
+    private bool rightIn;
 
     void OnTriggerEnter(Collider col)
     {
         Debug.Log("Something fell in hole");
-        if (col.gameObject.tag == "Crate" && !animationPlaying)
+        if (col.gameObject.tag == "Crate")
         {
             Debug.Log("Crate fell in hole");
-            animationPlaying = true;
-            Plant.layer = col.gameObject.layer;
+
+            if (col.gameObject.layer == 8 && !leftIn)
+            {
+                AnimatorL.SetTrigger("Crate");
+                leftIn = true;
+            }
+            else if (col.gameObject.layer == 9 && !rightIn)
+            {
+                AnimatorR.SetTrigger("Crate");
+                rightIn = true;
+            }
             
-            Animator.SetBool("Crate", true);
+            
             col.gameObject.SetActive(false);
-
-
         }
-        else if (col.gameObject.tag == "Player" && !animationPlaying)
+        else if (col.gameObject.tag == "Player")
         {
-            Debug.Log("Player Fell in hole");
-            animationPlaying = true;
-            //col.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
-            col.gameObject.GetComponent<Animator>().SetTrigger("Fall");
+            if ((!leftIn && col.gameObject.layer == 8))
+            {
+                Debug.Log("Player Fell in hole");
+                animationLeftPlaying = true;
+                col.gameObject.GetComponent<Animator>().SetTrigger("Fall");
 
-            Invoke("ResetTrigger", 1f);
+                //Invoke("ResetTrigger", 1f);
+            }
+            else if ((!rightIn && col.gameObject.layer == 9))
+            {
+                Debug.Log("Player Fell in hole");
+                animationRightPlaying = true;
+                col.gameObject.GetComponent<Animator>().SetTrigger("Fall");
+
+                //Invoke("ResetTrigger", 1f);
+            }
         }
 
     }
 
     private void ResetTrigger()
     {
-        animationPlaying = false;
+        animationLeftPlaying = false;
+        animationRightPlaying = false;
     }
 
     //public bool FellInHole = false;

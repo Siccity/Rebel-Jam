@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: CrateFall
+  m_Name: CrateFallR
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -32,7 +32,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Plants/PottedPlantLeft
+    path: PottedPlantRight
   m_ScaleCurves: []
   m_FloatCurves:
   - curve:
@@ -54,7 +54,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Plants/PottedPlantLeft
+    path: PottedPlantRight
     classID: 1
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -66,14 +66,14 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 2872037685
+      path: 204951582
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2872037685
+      path: 204951582
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -120,7 +120,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Plants/PottedPlantLeft
+    path: PottedPlantRight
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -142,7 +142,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Plants/PottedPlantLeft
+    path: PottedPlantRight
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -164,7 +164,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Plants/PottedPlantLeft
+    path: PottedPlantRight
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -186,7 +186,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Plants/PottedPlantLeft
+    path: PottedPlantRight
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves: []
